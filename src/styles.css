@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.social-icons svg {
+    transition: transform 0.3s ease-in-out;
+  }
+  .social-icons svg:hover {
+    transform: scale(1.2);
+  }
