@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet, CommonModule, RouterLink],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Briones-Portfolio';
-}
+  title = 'Alyanna Cyrelle Kumi Briones Portfolio';
+    activeLink: string = 'home'; 
+  
+    setActive(link: string) {
+      this.activeLink = link;
+    }
+  }
+  

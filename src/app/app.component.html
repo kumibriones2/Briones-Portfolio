@@ -1,26 +1,72 @@
-<router-outlet></router-outlet>
-<!-- <div class="container">
-  <header>
-    <h1>Welcome to My Portfolio</h1>
-  </header>
+<div class="flex h-screen">
+  <!-- Sidebar -->
+  <nav class="w-1/5 bg-[#0C0C0C] text-white flex flex-col items-center py-8 fixed h-full px-6 space-y-8">
+    
+    <!-- Profile -->
+    <div class="flex flex-col items-center text-center mt-4">
+      <img src="/icon.jpg" class="w-48 h-48 rounded-full border border-white">
+      <h2 class="mt-3 text-white font-semibold text-xl">Alyanna Cyrelle Kumi Briones</h2>
 
-  <section id="home">
-    <h2>Home</h2>
-    <p>Welcome to my portfolio website. Here you will find information about me, my projects, and how to contact me.</p>
-  </section>
+      <!-- Socials -->
+      <div class="flex justify-center items-center gap-4 mt-3">
+        <a href="https://github.com/kumibriones2" target="_blank" class="text-white text-2xl">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/alyanna-cyrelle-kumi-briones-50a221329/" target="_blank" class="text-white text-2xl">
+          <i class="bi bi-linkedin"></i>
+        </a>
+      </div>
+    </div>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Brief introduction about yourself.</p>
-  </section>
+    <br>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <p>Details about your projects.</p>
-  </section>
+    <!-- Nav -->
+    <div class="flex flex-col space-y-6 mt-8 w-full">
+      <a routerLink="/" 
+         [ngClass]="{
+           'text-[#3B82F6]': activeLink === 'home', 
+           'text-gray-400 hover:text-white': activeLink !== 'home'
+         }" 
+         (click)="setActive('home')" 
+         class="flex items-center space-x-3 transition-colors duration-300">
+        <i class="bi bi-house-door-fill text-2xl"></i>
+        <span class="text-lg">Home</span>
+      </a>
+      <a routerLink="/about" 
+         [ngClass]="{
+           'text-[#3B82F6]': activeLink === 'about', 
+           'text-gray-400 hover:text-white': activeLink !== 'about'
+         }" 
+         (click)="setActive('about')" 
+         class="flex items-center space-x-3 transition-colors duration-300">
+        <i class="bi bi-person-circle text-2xl"></i>
+        <span class="text-lg">About</span>
+      </a>
+      <a routerLink="/projects" 
+         [ngClass]="{
+           'text-[#3B82F6]': activeLink === 'projects', 
+           'text-gray-400 hover:text-white': activeLink !== 'projects'
+         }" 
+         (click)="setActive('projects')" 
+         class="flex items-center space-x-3 transition-colors duration-300">
+        <i class="bi bi-folder text-2xl"></i>
+        <span class="text-lg">Projects</span>
+      </a>
+      <a routerLink="/contact" 
+         [ngClass]="{
+           'text-[#3B82F6]': activeLink === 'contact', 
+           'text-gray-400 hover:text-white': activeLink !== 'contact'
+         }" 
+         (click)="setActive('contact')" 
+         class="flex items-center space-x-3 transition-colors duration-300">
+        <i class="bi bi-envelope-fill text-2xl"></i>
+        <span class="text-lg">Contact</span>
+      </a>
+    </div>
+  </nav>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>How to get in touch with you.</p>
-  </section>
-</div> -->
+  <!-- Main -->
+  <div class="ml-[20%] flex-grow">
+    <router-outlet></router-outlet>
+  </div>
+</div>

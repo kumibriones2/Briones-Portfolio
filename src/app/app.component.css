@@ -1,0 +1,13 @@
+a i {
+    color: gray; 
+    transition: color 0.3s ease-in-out;
+  }
+  
+  a:hover i {
+    color: white; 
+  }
+  
+  .active {
+    color: #d1d5db; /* Gray-300 */
+  }
+  
