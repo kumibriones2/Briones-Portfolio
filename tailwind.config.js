@@ -4,7 +4,10 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: { fontFamily: {
+        press: ["'Press Start 2P'", "cursive"],
+      },
+    },
   },
   plugins: [],
 }

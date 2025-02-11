@@ -25,22 +25,22 @@
   }
   
   .hero-content h1 {
-    font-family: "VT323", sans-serif;
-    font-size: 4rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
     text-transform: uppercase;
     font-weight: bold;
   }
   
   .hero-content p {
-    font-family: "VT323", monospace;
-    font-size: 2rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
     color: #ffffff;
     margin-top: 10px;
   }
 
   .hero-content a {
-    font-family: "VT323", sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
     text-transform: uppercase;
   }
   

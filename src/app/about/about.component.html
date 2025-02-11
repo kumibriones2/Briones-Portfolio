@@ -1,1 +1,93 @@
-<p>This is About me!</p>
+<div class="bg-gradient-to-b from-[#0c0c0c] to-[#2b2235] min-h-screen text-[#E0DED5] py-12 px-6 flex flex-col items-center">
+    <h4 class="text-white text-xs uppercase font-press">A Bit About Me</h4>
+    <h2 class="text-white text-2xl font-bold my-4 font-press">Who Am I?</h2>
+    
+    <div class="grid grid-cols-3 md:grid-cols-4 gap-1 border-6 border-white w-full max-w-md">
+        <img src="https://i.imgur.com/eyuhLu0.png" class="block w-full h-24 object-cover" alt="Image 1">
+        <img src="https://i.imgur.com/8vrJWgN.png" class="block w-full h-24 object-cover" alt="Image 2">
+        <img src="https://i.imgur.com/xupslWc.png" class="block w-full h-24 object-cover" alt="Image 3">
+        <img src="https://i.imgur.com/z3jp5NE.png" class="block w-full h-24 object-cover" alt="Image 4">
+        <img src="https://i.imgur.com/0M2L1ys.png" class="block w-full h-24 object-cover" alt="Image 5">
+        <img src="https://i.imgur.com/ec1J49F.png" class="block w-full h-24 object-cover" alt="Image 6">
+
+        <!-- Image 7 with hover effect -->
+        <img src="https://i.imgur.com/mOO7koD.png" 
+        class="block w-full h-24 object-cover cursor-pointer zoom-image" 
+        alt="Image 7" 
+        (click)="openPopup()"> 
+
+        <img src="https://i.imgur.com/ormkRp7.png" class="block w-full h-24 object-cover" alt="Image 8">
+        <img src="https://i.imgur.com/VYKOWPO.png" class="block w-full h-24 object-cover" alt="Image 9">
+        <img src="https://i.imgur.com/e0CqTYK.png" class="block w-full h-24 object-cover" alt="Image 10">
+        <img src="https://i.imgur.com/LWpHeDs.png" class="block w-full h-24 object-cover" alt="Image 11">
+        <img src="https://i.imgur.com/gxLwbTG.png" class="block w-full h-24 object-cover" alt="Image 12">
+    </div>
+
+    <!-- Popup Card -->
+    <div *ngIf="showPopup" class="popup-overlay">
+        <div class="popup-card">
+            <div class="popup-header">
+                <h2 class="text-md font-bold font-press">About Me</h2>
+                <button (click)="closePopup()" class="close-btn">&times;</button>
+            </div>
+            <div class="popup-body">
+                <img src="https://i.imgur.com/mOO7koD.png" alt="Profile Picture" class="profile-pic">
+                <p><strong>Full Name:</strong> Alyanna Cyrelle Kumi Briones</p>
+                <p><strong>Age:</strong> 21</p>
+                <p><strong>Birthday:</strong> August, 21, 2003</p>
+                <p><strong>Education:</strong> BS in Information Technology major in Web Development</p>
+                <p><strong>Skills:</strong> Web Development, UI/UX Design, Graphic Design</p>
+                <p><strong>Hobbies:</strong> Designing, Coding, Gaming, Reading</p>
+                <p><strong>Passion:</strong> IT & Creative Development</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Me -->
+    <h2 class="text-white text-2xl font-bold my-6 font-press">Hi, I'm Kumi!</h2>
+    <p class="text-white text-center max-w-2xl leading-relaxed text-xs font-press">
+        Hey there! I'm Kumi, a creative soul with a passion for turning ideas into reality. Whether it's designing, coding, or crafting something unique, I love bringing visions to life.
+    </p>
+    
+    <!-- KUMI Card -->
+    <div class="grid grid-cols-3 md:grid-cols-4 gap-6 mt-8 text-xs font-press">
+        <div *ngFor="let service of services; let i = index" 
+            class="bg-[#E0DED5] text-black p-6 rounded-lg shadow-lg flex flex-col items-center cursor-pointer"
+            (click)="toggleDropdown(i)">
+            
+            <h3 class="text-2xl font-bold text-[#152238] font-press">{{ service.letter }}</h3>
+            <p class="text-center mt-2 font-poppins font-press">{{ service.description }}</p>
+    
+            <div *ngIf="service.showDetails" class="w-full mt-2 bg-gradient-to-b from-[#1a1a1a] to-[#2b2235] p-4 rounded-lg text-white font-press text-sm">
+                {{ service.details }}
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- Timeline Section -->
+    <h2 class="text-3xl font-extrabold text-white my-4 animate-bounce font-press">How I Found My Passion for IT</h2>
+
+    <div class="timeline-container flex items-center justify-start overflow-x-auto py-6 w-full min-w-max pl-10">
+        <div class="timeline flex items-center space-x-7 w-full">
+            <div *ngFor="let step of journeySteps; let i = index" class="timeline-item relative flex flex-col items-center min-w-max first:ml-0">
+                
+                <!-- Line Connector -->
+                <div *ngIf="i > 0" class="timeline-line w-12 h-1 bg-yellow-500 absolute left-[-2rem] top-3"></div>
+
+                <!-- Dot -->
+                <div class="timeline-dot w-6 h-6 rounded-full bg-yellow-500 border-2 border-black flex items-center justify-center">
+                    <span class="text-sm font-bold text-black">{{ i + 1 }}</span>
+                </div>
+
+                <!-- Content Box -->
+                <div class="timeline-content bg-gray-800 p-4 rounded-md shadow-md w-36 text-center mt-2">
+                    <h3 class="text-md font-semibold text-yellow-300">{{ step.year }}</h3>
+                    <p class="text-gray-300 text-xs mt-1">{{ step.description }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

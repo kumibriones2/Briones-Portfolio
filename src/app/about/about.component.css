@@ -1,0 +1,266 @@
+
+
+img {
+    display: block !important;
+    width: 100%;
+    height: auto;
+    background-color: red; 
+  }
+
+  .grid {
+    display: grid !important;
+  }
+
+  * {
+    touch-action: manipulation; 
+}
+
+div {
+    transition: none !important;
+}
+
+.bg-white {
+    transition: background-color 0.3s ease-in-out;
+}
+
+.w-full {
+    transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.bg-[E0DED5] {
+  background-color: #E0DED5;
+  color: #1A1A1A;
+  padding: 30px; 
+  width: 110%;  
+  max-width: 400px; 
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-[E0DED5]:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* card pop out in image */
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-black {
+  color: black;
+}
+
+.p-6 {
+  padding: 1.5rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.shadow-lg {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.text-center {
+  text-align: center;
+}
+/* popup image/card */
+/* Hover effect for Image 7 */
+.zoom-image:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50; /* Ensure it appears above everything */
+}
+
+/* Popup Card */
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Glassmorphism Popup Card */
+.popup-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  color: white;
+  animation: slideUp 0.4s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Header Section */
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.popup-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Close Button */
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #ff5252;
+}
+
+/* Profile Image */
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin: 10px auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Popup Body Text */
+.popup-body p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+
+/* timeline */
+.timeline-container {
+  width: 100%;
+  max-width: 1000px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  background: linear-gradient(to right,#0f0f0f, #362a46);
+  border-radius: 10px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.timeline {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  min-width: max-content; 
+}
+
+.timeline-item {
+  position: relative;
+  text-align: center;
+  min-width: 120px;
+}
+
+.timeline-item:first-child {
+  margin-left: 0 !important; 
+}
+
+.timeline-line {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.timeline-dot {
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.2);
+}
+
+.timeline-content {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  max-width: 140px;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.15);
+}
+  
+
